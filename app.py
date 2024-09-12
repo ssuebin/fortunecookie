@@ -1,32 +1,25 @@
 import streamlit as st
 import os
 
-# HTML 파일 로드
-def load_html(file_path):
+# 파일 로드 함수
+def load_file(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
         return file.read()
 
-# CSS 파일 로드
-def load_css(css_file):
-    with open(css_file, 'r', encoding='utf-8') as file:
-        return f"<style>{file.read()}</style>"
-
-# JS 파일 로드
-def load_js(js_file):
-    with open(js_file, 'r', encoding='utf-8') as file:
-        return f"<script>{file.read()}</script>"
-
 def main():
-    # 경로 설정 (Streamlit Cloud에서 파일 경로 주의)
-    current_dir = os.path.dirname(__file__)
-    html_file = os.path.join(current_dir, 'index.html')
-    css_file = os.path.join(current_dir, 'styles.css')
-    js_file = os.path.join(current_dir, 'script.js')
+    # 파일 경로 설정
+    html_file = 'index.html'
+    css_file = 'styles.css'
+    js_file = 'script.js'
     
-    # HTML, CSS, JS 삽입
-    st.markdown(load_html(html_file), unsafe_allow_html=True)
-    st.markdown(load_css(css_file), unsafe_allow_html=True)
-    st.markdown(load_js(js_file), unsafe_allow_html=True)
+    # CSS 삽입
+    st.markdown(f"<style>{load_file(css_file)}</style>", unsafe_allow_html=True)
+    
+    # HTML 삽입
+    st.markdown(load_file(html_file), unsafe_allow_html=True)
+    
+    # JS 삽입 (가능한 경우, 별도 JS 실행을 위한 처리)
+    st.markdown(f"<script>{load_file(js_file)}</script>", unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
