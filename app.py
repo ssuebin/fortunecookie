@@ -44,7 +44,7 @@ def main():
 
     # 메시지 화면 표시
     if st.session_state.show_fortune:
-        st.markdown("<h2 style='text-align: center; font-size: 24px;'>🥠 당신의 포춘 메시지 🥠:</h2>", unsafe_allow_html=True)
+        st.markdown("<h2 style='text-align: center; font-size: 24px;'>🥠 오늘의 구절 🥠:</h2>", unsafe_allow_html=True)
         st.markdown(f"<h3 style='text-align: center; font-size: 20px;'>{st.session_state.fortune_message}</h3>", unsafe_allow_html=True)
         if st.button("다시 열기"):
             st.session_state.show_fortune = False  # 초기 화면으로 돌아가기
