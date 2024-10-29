@@ -35,10 +35,11 @@ def main():
         st.session_state.fortune_message = ""
 
     # 페이지 제목 (가운데 정렬 및 글씨 크기 조정)
-    st.markdown("<h1 style='text-align: center; font-size: 36px;'>밀란 쿤데라의 포춘쿠키</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center; font-size: 36px; color: green'>🍀밀란 쿤데라의 포춘쿠키🤍</h1>", unsafe_allow_html=True)
+    st.markdown("<h2 style='text-align: center; font-size: 24px;'>오늘, 밀란 쿤데라가 당신에게 전하는 책 속 구절을 확인해보세요!</h2>", unsafe_allow_html=True) 
     
     # 이미지 표시 (이미지 파일 경로를 'fortune_cookie.png'로 가정)
-    st.image("fortune_cookie1.png", use_column_width=True)
+    st.image("fortune_cookie2.png", use_column_width=True)
 
     # 버튼 클릭 시 상태 변경
     if st.button("포춘쿠키 열기"):
@@ -47,8 +48,8 @@ def main():
 
     # 메시지 화면 표시
     if st.session_state.show_fortune:
-        st.markdown("<h2 style='text-align: center; font-size: 24px;'>🥠 오늘의 구절 🥠:</h2>", unsafe_allow_html=True)
-        st.markdown(f"<h3 style='text-align: center; font-size: 20px;'>{st.session_state.fortune_message}</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='text-align: center; font-size: 24px;'>🥠 오늘의 구절 🥠:</h3>", unsafe_allow_html=True)
+        st.markdown(f"<h4 style='text-align: center; font-size: 20px;'>{st.session_state.fortune_message}</h4>", unsafe_allow_html=True)
         if st.button("다시 열기"):
             st.session_state.show_fortune = False  # 초기 화면으로 돌아가기
 
