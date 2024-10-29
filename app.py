@@ -38,7 +38,7 @@ def main():
     st.markdown("<h1 style='text-align: center; font-size: 36px;'>밀란 쿤데라의 포춘쿠키</h1>", unsafe_allow_html=True)
     
     # 이미지 표시 (이미지 파일 경로를 'fortune_cookie.png'로 가정)
-    st.image("fortune_cookie.png", use_column_width=True)
+    st.image("fortune_cookie1.png", use_column_width=True)
 
     # 버튼 클릭 시 상태 변경
     if st.button("포춘쿠키 열기"):
